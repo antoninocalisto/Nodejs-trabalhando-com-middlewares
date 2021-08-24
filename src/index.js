@@ -103,7 +103,7 @@ app.patch('/todos/:id/done', checksTodoExists, (request, response) => {
 
   todo.done = true;
 
-  return response.json(todo);
+  return response.json(todo); 
 });
 
 app.delete('/todos/:id', checksExistsUserAccount, checksTodoExists, (request, response) => {
@@ -113,7 +113,7 @@ app.delete('/todos/:id', checksExistsUserAccount, checksTodoExists, (request, re
 
   if (todoIndex === -1) {
     return response.status(404).json({ error: 'Todo not found' });
-  }
+  } 
 
   user.todos.splice(todoIndex, 1);
 
